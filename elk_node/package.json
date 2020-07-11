@@ -1,0 +1,24 @@
+{
+  "name": "elk-node",
+  "version": "1.0.0",
+  "description": "[![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Elastic Stack version](https://img.shields.io/badge/ELK-7.8.0-blue.svg?style=flat)](https://github.com/deviantony/docker-elk/issues/515) [![Build Status](https://api.travis-ci.org/deviantony/docker-elk.svg?branch=master)](https://travis-ci.org/deviantony/docker-elk)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deviantony/docker-elk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deviantony/docker-elk/issues"
+  },
+  "homepage": "https://github.com/deviantony/docker-elk#readme",
+  "dependencies": {
+    "@log4js-node/logstashudp": "1.2.1",
+    "log4js": "6.3.0"
+  }
+}
