@@ -46,11 +46,9 @@ while True:
     msg = consumer.poll(timeout=10)
     if msg:
         data = get_message(msg)
-        print(data)
         logging.info(f"Consuming {data['objectId']} - {data['candidate']['jd']}")
         print(magnitude_correction(data['candidate']['magnr'],data['candidate']['isdiffpos'],data['candidate']['magpsf']))
         print(magnitude_correction2(data['candidate']['magpsf'],data['candidate']['sigmapsf'],data['candidate']['magnr'],data['candidate']['sigmagnr'],data['candidate']['isdiffpos']))
-        input()
 
     else:
     	logging.info(f"Error {msg}")

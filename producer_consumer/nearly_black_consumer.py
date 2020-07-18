@@ -35,7 +35,6 @@ while True:
     if msg:
         data = get_message(msg)
         logging.info(f"Consuming {data['objectId']} - {data['candidate']['jd']}")
-        input()
 
     else:
     	logging.info(f"Error {msg}")
