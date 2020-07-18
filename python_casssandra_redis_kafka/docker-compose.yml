@@ -15,6 +15,16 @@ services:
             - REDIS_HOST=redis
             - REDIS_PORT=6379
             - REDIS_DB=0
+            - CASSANDRA_HOST=cassandra
+            - CASSANDRA_PORT=9042
+            - CASSANDRA_USER=cassandra
+            - CASSANDRA_PASSWORD=cassandra
+            - CASSANDRA_KEYSPACE=student
+            - KAFKA_HOST=kafka
+            - KAFKA_USER=kafka
+            - KAFKA_PASSWORD=kafka
+            - KAFKA_GROUPID=mygroup
+            - KAFKA_TOPIC=test
         depends_on: 
             - redis
             - cassandra
@@ -29,10 +39,14 @@ services:
         networks:
             - python_app
     cassandra:
-        image: cassandra:3.11
+        image: 'bitnami/cassandra:3-debian-10'
         container_name: cassandra
         ports:
+            - '7000:7000'
+            - '7199:7199'
             - '9042:9042'
+        volumes: 
+            - ./init:/docker-entrypoint-initdb.d
         networks:
             - python_app
     zookeeper:

@@ -1,34 +1,26 @@
-from redis import Redis
-from cassandra.cluster import Cluster
-from os import getenv
+from modules.Redis import Redis
+from modules.Cassandra import Cassandra
+from modules.Kafka import Kafka
 from sys import stdout
-from confluent_kafka import Consumer
 
 # Redis
-redis_host = getenv('REDIS_HOST')
-redis_port = getenv('REDIS_PORT')
-redis_db = getenv('REDIS_DB')
-r = Redis(host=redis_host, port=redis_port, db=redis_db)
+r = Redis.getInstance()
 r.set('foo', 'bar')
 obtained = r.get('foo').decode('utf-8')
+print(obtained)
 
 # Cassandra
-cluster = Cluster(['cassandra'])
-session = cluster.connect()
+c = Cassandra.getInstance()
+rows = c.execute('SELECT * FROM contact')
+for row in rows:
+    print(row)
 
 # Kafka
-c = Consumer({
-    'bootstrap.servers': 'kafka',
-    'group.id': 'mygroup',
-    'auto.offset.reset': 'beginning'
-})
-
-c.subscribe(['test'])
-
+k = Kafka.getInstance()
 print("Ready to receive messages")
 while True:
     stdout.flush()
-    msg = c.poll(1.0)
+    msg = k.poll(1.0)
     if msg is None:
         continue
     if msg.error():
