@@ -1,3 +1,3 @@
 redis
 cassandra-driver
-kafka-python
+confluent-kafka
