@@ -1,0 +1,7 @@
+# Explicacion
+
+Para que un grupo de consumidores "compitan" por los mensajes que hay en un topico, estos deben compartir un `group.id`. Cuando un grupo de consumidores comparten un `group.id`, kafka por detras reparte las particiones de un topico entre los consumidores, si es que hay 10 particiones de un topico, y 2 consumidores, cada consumidor consume de 5 particiones. El problema esta en el consumidor, el cual debe tener en cuenta cuantas particiones hay, ya que al enviar un dato a un topico, se tiene que especificar la particion (en el codigo, se ve que la particion va cambiando ciclicamente gracias a `cycle`).
+
+# Como replicar
+
+Primero, ejecutar el docker compose que esta en esta misma carpeta. Esto lo que hara sera levantar kafka y el zookeeper, ademas de ejecutar un codigo en python el cual crea un topico con 2 particiones. Luego de esto, ejecutar el docker compose que se encuentra en la carpeta `consumer`, el cual levantara dos replicas (a la mala) de una misma aplicacion. Finalmente, buildear el dockerfile que se encuentra en la carpeta producer con el comando `docker build --tag producer .` y ejecutarlo con el comando `docker run -v $PWD:/usr/src/app -e KAFKA_HOST=kafka -e KAFKA_TOPIC=test --network=group_test producer`. En el codigo de la carpeta `producer` se me olvido sacarle el salto de linea al mensaje que se envia.

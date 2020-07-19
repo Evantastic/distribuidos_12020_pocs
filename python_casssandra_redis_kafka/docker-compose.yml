@@ -21,8 +21,6 @@ services:
             - CASSANDRA_PASSWORD=cassandra
             - CASSANDRA_KEYSPACE=student
             - KAFKA_HOST=kafka
-            - KAFKA_USER=kafka
-            - KAFKA_PASSWORD=kafka
             - KAFKA_GROUPID=mygroup
             - KAFKA_TOPIC=test
         depends_on: 
