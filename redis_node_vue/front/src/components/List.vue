@@ -3,6 +3,7 @@
     <v-card>
       <v-list >
         <v-list-item :to="{ name:'Planet', params:{id: item.id}}" v-for="item in visiblePages" :key="item.id" >
+          <v-icon id="flecha">mdi-earth</v-icon>
           <v-list-item-content>
             <v-list-title  >{{ item.nombre }}</v-list-title>
           </v-list-item-content>

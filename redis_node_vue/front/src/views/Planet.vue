@@ -3,40 +3,46 @@
         <Navbar/>
         <v-row>
             <v-col cols="6">
-                <v-card flat color="rgb(0, 0, 0, 0)">
+                <v-card  flat>
                     <v-card-title  id="tituloTarjeta">Imagenes</v-card-title>
                     <v-divider></v-divider>
                     <Picture/>
                 </v-card>
             </v-col>
             <v-col cols="6">
-                <v-card flat color="rgb(255, 255, 255, 0)">
+                <v-card flat >
                     <v-card-title id="tituloTarjeta">Información</v-card-title>
                     <v-divider></v-divider>
-                    <v-list color="rgb(0, 0, 0, 0)" dense>
+                    <v-list color="rgb(255,255,255)" dense>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Nombre: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.nombre }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Nombre: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.nombre }}</v-list-item-content>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Magpsf: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.magpsf }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Magpsf: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.magpsf }}</v-list-item-content>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Sigmapsf: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.sigmapsf }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Sigmapsf: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.sigmapsf }}</v-list-item-content>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Magpsf Corregido: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.magpsf_corr }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Magpsf Corregido: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.magpsf_corr }}</v-list-item-content>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Sigmapsf Corregido: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.sigmapsf_corr }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Sigmapsf Corregido: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.sigmapsf_corr }}</v-list-item-content>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-content id="datoTarjeta" class="white--text">Delta: </v-list-item-content>
-                            <v-list-item-content id="datoTarjeta" class="align-end white--text">{{ planet.delta }}</v-list-item-content>
+                            <v-icon id="flecha">mdi-circle-medium</v-icon>
+                            <v-list-item-content id="datoTarjeta" >Delta: </v-list-item-content>
+                            <v-list-item-content id="datoTarjeta2" class="align-end ">{{ planet.delta }}</v-list-item-content>
                         </v-list-item>
                     </v-list>
                 </v-card>
@@ -44,24 +50,24 @@
         </v-row>
         <v-row>
             <v-col>
-                <v-card flat color="rgb(0, 0, 0, 0)">
+                <v-card  >
                     <v-card-title  id="tituloTarjeta">Estadisticas</v-card-title>
 
                     <v-divider></v-divider>
 
                     <v-row>
                         <v-col>
-                            <v-card-title id="subtituloTarjeta" class="white--text">Magpsf</v-card-title>
+                            <v-card-title  id="subtituloTarjeta" >Magpsf</v-card-title>
                                 <Data :planet_data="magpsf" />
                             <v-divider></v-divider>
-                            <v-card-title id="subtituloTarjeta" class="white--text">Sigmapsf</v-card-title>
+                            <v-card-title id="subtituloTarjeta" >Sigmapsf</v-card-title>
                                 <Data :planet_data="sigmapsf" />
                         </v-col>
                         <v-col>
-                            <v-card-title id="subtituloTarjeta" class="white--text">Magpsf Corregido</v-card-title>
+                            <v-card-title id="subtituloTarjeta" >Magpsf Corregido</v-card-title>
                                 <Data :planet_data="magpsfCorr" />
                             <v-divider></v-divider>
-                            <v-card-title id="subtituloTarjeta" class="white--text">Sigmapsf Corregido</v-card-title>
+                            <v-card-title id="subtituloTarjeta" >Sigmapsf Corregido</v-card-title>
                                 <Data :planet_data="sigmapsfCorr" />
                         </v-col>
                     </v-row>
@@ -139,7 +145,7 @@ export default {
 
 <style>
 #fondo{
-    background-color: #3998b5;
+    background-image: url("../assets/fondo1.png");
     background-size: cover;
     width: 100%;
     max-width: 100%;
@@ -150,14 +156,21 @@ export default {
 
 #tituloTarjeta{
     font-size: xx-large;
-    background-color: aliceblue;
+    background-color: #f86525;
+    color: white;
 }
 
 #subtituloTarjeta{
     font-size: x-large;
+    color:#f86525; 
 }
 
 #datoTarjeta{
     font-size: large;
+}
+
+#datoTarjeta2{
+    font-size: large;
+    font-weight: bold;
 }
 </style>
